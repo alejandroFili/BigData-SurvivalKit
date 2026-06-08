@@ -1,5 +1,7 @@
 # Parquet Hive
 
+[HAY UN PDF](https://github.com/alejandroFili/BigData-SurvivalKit/blob/main/docs/Apuntes/DB/Clickhouse/pdf/Parquet%20Hive.pdf)
+
 ## Local
 
 ### Copiar los ficheros a docker
