@@ -27,6 +27,6 @@
 
 @keyframes wobble {
   0%   { transform: scaleX(-1) rotate(-6deg) translateY(0px); }
-  50%  { transform: scaleX(-1) rotate(6deg) translateY(-2px); }
+  50%  { transform: scaleX(-1) rotate(6deg) translateY(300px); }
   100% { transform: scaleX(-1) rotate(-6deg) translateY(0px); }
 }
