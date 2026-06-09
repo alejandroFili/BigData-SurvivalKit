@@ -3,8 +3,8 @@
   transform: scaleX(-1);
   display: inline-block;
   font-size: 40px; /* or icon size */
-  /* animation: duckMove 4s infinite linear; */
-  animation: wobble 0.6s infinite ease-in-out;
+  animation: duckMove 4s infinite linear;
+  /* animation: wobble 0.6s infinite ease-in-out; */
 }
 
 @keyframes duckMove {
