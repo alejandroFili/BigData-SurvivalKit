@@ -1,0 +1,1 @@
+[LINK](https://github.com/alejandroFili/BigData-SurvivalKit/blob/main/docs/Apuntes/DB/Kafka/Conexiones/FilePulse/FilePulse.txt)
