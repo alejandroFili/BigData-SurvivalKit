@@ -21,8 +21,8 @@ theme:
   # name: dracula
   font:
     code: Fira Code
-  logo: /Assets/img/duck.svg
-  favicon: /Assets/img/duck.svg
+  logo: Assets/img/duck.svg
+  favicon: Assets/img/duck.svg
 extra_css:
   - stylesheets/extra.css
   - 
