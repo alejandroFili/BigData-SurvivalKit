@@ -27,15 +27,15 @@ CREATE SOURCE CONNECTOR `raw_customer` WITH(
 
 !!! danger "El connector se llama raw_customer el topic es raw.customer es decir topic.prefix + table.whitelist"
 
-!!! quote Verificar el topic
+!!! quote "Verificar el topic"
 
 ```SQL
-print `sak.customer` from beginning limit 5;
+print `raw.customer` from beginning limit 5;
 ```
 
 !!! quote "Ejemplo salida print"
 
-```bash linenums="1" hl_lines="2-3"
+```bash linenums="1" hl_lines="2-5"
 ksql> print 'raw.customer' from beginning limit 5;
 # key format : Null, no hay nada
 Key format: ¯\_(ツ)_/¯ - no data processed
