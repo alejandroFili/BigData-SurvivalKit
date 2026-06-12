@@ -5,6 +5,8 @@
 ```SQL
 CREATE SOURCE CONNECTOR `raw_customer` WITH(
     "connector.class" = 'io.confluent.connect.jdbc.JdbcSourceConnector',
+    --- ojo puerto tiene que coincidir
+    --- ojo nombre de la base de datos
     "connection.url" = 'jdbc:mysql://mariadb:3306/sakila?serverTimezone=Europe/Madrid',
     "connection.user" = 'sak_user',
     "connection.password" = 'sak_pass',
