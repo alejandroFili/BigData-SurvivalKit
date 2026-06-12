@@ -187,9 +187,9 @@ client = clickhouse_connect.get_client(
 !!! danger " Si tienes Syntax error (Multi-statements are not allowed) "
 las `'''` tienen se que ser pegadas
 mal :
-![](Assets/img/Pasted%20image%2020260501202558.png)
+![](/Assets/img/Pasted%20image%2020260501202558.png)
 bien:
-![](Assets/img/Pasted%20image%2020260501202717.png)
+![](/Assets/img/Pasted%20image%2020260501202717.png)
 
 
 ```PYTHON
