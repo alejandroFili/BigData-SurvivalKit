@@ -25,6 +25,4 @@ CREATE SOURCE CONNECTOR `raw_customer` WITH(
     --- sienta las bases de llevar del operacional en tiempo continuo
     "topic.prefix" = 'raw.',
     "tasks.max" = '1');
-
-print 'raw.customer' from beginning limit 5;
 ```
