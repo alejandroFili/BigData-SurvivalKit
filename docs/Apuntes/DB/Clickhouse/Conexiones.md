@@ -185,11 +185,11 @@ client = clickhouse_connect.get_client(
 ```
 
 !!! danger " Si tienes Syntax error (Multi-statements are not allowed) "
->las `'''` tienen se que ser pegadas
->mal :
->![](Pasted%20image%2020260501202558.png)
->bien:
->![](Pasted%20image%2020260501202717.png)
+las `'''` tienen se que ser pegadas
+mal :
+![](Assets/img/Pasted%20image%2020260501202558.png)
+bien:
+![](Assets/img/Pasted%20image%2020260501202717.png)
 
 
 ```PYTHON
@@ -248,13 +248,13 @@ docker exec -it clickhouse clickhouse-client
 
 ## Local
 
-![](Pasted%20image%2020260504132410.png)
+![](Assets/img/Pasted%20image%2020260504132410.png)
 
 !!! warning " Puerto, usuario, password del docker compose "
 
 ## Online
 
-![](Pasted%20image%2020260504132518.png)
+![](Assets/img/Pasted%20image%2020260504132518.png)
 
 !!! warning " Link etc del profe "
 

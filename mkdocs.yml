@@ -46,3 +46,9 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  # Images
+  - md_in_html
+  - pymdownx.blocks.caption
+  - plugins:
+    # zoom images
+    - glightbox
