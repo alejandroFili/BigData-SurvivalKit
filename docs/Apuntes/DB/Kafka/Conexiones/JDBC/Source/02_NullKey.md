@@ -1,4 +1,4 @@
-```SQL
+```SQL linenums="1"
 CREATE SOURCE CONNECTOR `raw_customer` WITH(
     "connector.class" = 'io.confluent.connect.jdbc.JdbcSourceConnector',
     --- CUIDADO puerto
@@ -17,7 +17,7 @@ CREATE SOURCE CONNECTOR `raw_customer` WITH(
     --- que hace con los nulos
     "validate.non.null" = 'false',
     --- va a etiquetar los mensajes como topicos
-    --- raw.customer
+    --- raw.customer (prefix + table.whitelist) ¿?
     --- sienta las bases de llevar del operacional en tiempo continuo
     "topic.prefix" = 'raw.',
     "tasks.max" = '1');
