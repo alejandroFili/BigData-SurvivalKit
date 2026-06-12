@@ -21,8 +21,8 @@ theme:
   # name: dracula
   font:
     code: Fira Code
-    logo: /Assets/img/duck.svg
-    favicon: /Assets/img/duck.svg
+  logo: /Assets/img/duck.svg
+  favicon: /Assets/img/duck.svg
 extra_css:
   - stylesheets/extra.css
   - 
@@ -49,9 +49,11 @@ markdown_extensions:
   # Images
   - md_in_html
   - pymdownx.blocks.caption
-  # - plugins:
-    # zoom images
-    # - glightbox
 validation:
   links:
     absolute_links: relative_to_docs
+- plugins:
+    # zoom images
+    - glightbox
+    - search
+    - excalidraw
