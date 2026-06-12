@@ -26,3 +26,8 @@ CREATE SOURCE CONNECTOR `raw_customer` WITH(
     "topic.prefix" = 'raw.',
     "tasks.max" = '1');
 ```
+
+!!! quote ver el resultado
+```SQL
+print 'raw.customer' from beginning limit 5;
+```
