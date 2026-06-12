@@ -52,7 +52,7 @@ markdown_extensions:
 validation:
   links:
     absolute_links: relative_to_docs
-- plugins:
+plugins:
     # zoom images
     - glightbox
     - search
