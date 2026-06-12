@@ -248,13 +248,13 @@ docker exec -it clickhouse clickhouse-client
 
 ## Local
 
-![](Assets/img/Pasted%20image%2020260504132410.png)
+![](docs/Assets/img/Pasted%20image%2020260504132410.png)
 
 !!! warning " Puerto, usuario, password del docker compose "
 
 ## Online
 
-![](Assets/img/Pasted%20image%2020260504132518.png)
+![](docs/Assets/img/Pasted%20image%2020260504132518.png)
 
 !!! warning " Link etc del profe "
 
