@@ -8,6 +8,7 @@ CREATE SOURCE CONNECTOR `raw_customer` WITH(
     --- ojo puerto tiene que coincidir
     --- ojo nombre de la base de datos
     "connection.url" = 'jdbc:mysql://mariadb:3306/sakila?serverTimezone=Europe/Madrid',
+    --- cambia el user y password a lo que tengas
     "connection.user" = 'sak_user',
     "connection.password" = 'sak_pass',
     "db.timezone" = 'Europe/Madrid',
