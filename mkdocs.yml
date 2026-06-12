@@ -23,7 +23,7 @@ theme:
     code: Fira Code
   logo: Assets/img/duckYellow.svg
   favicon: Assets/img/duckYellow.svg
-    features:
+  features:
     - content.code.copy
 extra_css:
   - stylesheets/extra.css
