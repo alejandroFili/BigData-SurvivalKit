@@ -64,10 +64,10 @@ print 'connect-file-pulse-csv' from beginning limit 5;
 
 ## Problemas
 
-Verifica:
-* Tienes la carpeta creada en server
-* Tienes el fichero en la carpeta en server
-* Permisos ? de la carpeta/ficher en server
+=== Verifica:
+    *Tienes la carpeta creada en server
+    *Tienes el fichero en la carpeta en server
+    *Permisos ? de la carpeta/ficher en server
 
 ```SQL title="Conexion al servidor"
 docker exec -it ksqldb-server /bin/bash
