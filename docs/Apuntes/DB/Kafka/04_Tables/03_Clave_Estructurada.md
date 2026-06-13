@@ -6,8 +6,7 @@
 
 !!! quote "struct(nombre1 := columna1, nombre2 := columna2)"
 
-
-```sql linenums=1 hl_lines="4 8"
+```sql linenums="1" hl_lines="4 8"
 CREATE TABLE `AlbSong2`
 WITH (KAFKA_TOPIC='albsong2', KEY_FORMAT='AVRO', VALUE_FORMAT='AVRO')
 AS SELECT
