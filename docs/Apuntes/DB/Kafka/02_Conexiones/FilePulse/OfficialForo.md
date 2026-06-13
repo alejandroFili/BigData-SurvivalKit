@@ -1,5 +1,6 @@
 # Official Foro
 
+!!! danger "No olvides: por defecto se borran los archivos/carpetas de server y hay que ponerlos otra vez"
 
 [LINK](/Apuntes/DB/Kafka/02_Conexiones/FilePulse/FilePulse.txt)
 
@@ -26,6 +27,7 @@ CREATE SOURCE CONNECTOR `connect-file-pulse-csv` WITH(
     "offset.policy.class" = 'io.streamthoughts.kafka.connect.filepulse.offset.DefaultSourceOffsetPolicy',
     "offset.attributes.string" = 'name',
     "skip.headers" = '1',
+    --- CUIDADO : aqui se pone el topic completo (no combina prefix etc)
     "topic" = 'connect-file-pulse-csv',
     "tasks.reader.class" = 'io.streamthoughts.kafka.connect.filepulse.fs.reader.LocalRowFileInputReader',
     "tasks.file.status.storage.class" = 'io.streamthoughts.kafka.connect.filepulse.state.KafkaFileObjectStateBackingStore',
@@ -46,4 +48,43 @@ CREATE SOURCE CONNECTOR `connect-file-pulse-csv` WITH(
     "internal.kafka.reporter.bootstrap.servers" = 'redpanda:9092',
     "internal.kafka.reporter.topic" = 'connect-file-pulse-status',
     "tasks.max" = '1');
+```
+
+!!! quote "Ver si se ha creado"
+
+```SQL
+list topics;
+```
+
+!!! quote "Ver el resultado"
+
+```SQL
+print 'connect-file-pulse-csv' from beginning limit 5;
+```
+
+## Problemas
+
+Verifica:
+* Tienes la carpeta creada en server
+* Tienes el fichero en la carpeta en server
+* Permisos ? de la carpeta/ficher en server
+
+```SQL title="Conexion al servidor"
+docker exec -it ksqldb-server /bin/bash
+```
+
+```SQL title="Creamos la carpeta"
+mkdir /tmp/FilePulse
+```
+
+```SQL title="Movemos el fichero (en mi caso del shared_server que es un bind volume)"
+cd shared_server
+--- puedes pulsar tab despues de estribir me y se autocompleta
+cp metal-musics-dataset.csv /tmp/FilePulse 
+```
+
+!!! warning "Verifica en CLI si te va con list topics; si no (ojo coge cada x milisegundos intentalo varias veces)-> prueba permisos"
+
+```SQL title="Permisos en server"
+chmod -R 777 /tmp/FilePulse
 ```
