@@ -40,7 +40,7 @@ Topic printing ceased
 select * from `AlbSong2`;
 ```
 
-!!! danger "Como la clave no es estructurada K1(artist) y K2(album) en la misma columna"
+!!! danger "Como la clave es estructurada K1(artist) y K2(album) en la misma columna"
 
 ```bash
 ksql> select * from `AlbSong2`;
