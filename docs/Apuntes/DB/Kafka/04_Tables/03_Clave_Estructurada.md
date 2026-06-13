@@ -4,7 +4,8 @@
 
 !!! danger "Para crear una tabla con clave estructurada necesitas struct"
 
-!!! quote "struct(<nombre> := columna1, <nombre> := columna2)"
+!!! quote "struct(nombre1 := columna1, nombre2 := columna2)"
+
 
 ```sql linenums=1 hl_lines="4 8"
 CREATE TABLE `AlbSong2`
