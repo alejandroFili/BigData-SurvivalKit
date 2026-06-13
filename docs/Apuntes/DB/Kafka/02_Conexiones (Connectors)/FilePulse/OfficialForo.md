@@ -68,7 +68,7 @@ Verifica:
 
 - [ ] Tienes la carpeta creada en server
 - [ ] Tienes el fichero en la carpeta en server
-- [ ] Permisos ? de la carpeta/ficher en server
+- [ ] Permisos ? de la carpeta/fichero en server
 
 ```SQL title="Conexion al servidor"
 docker exec -it ksqldb-server /bin/bash
