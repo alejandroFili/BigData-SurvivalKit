@@ -53,6 +53,9 @@ markdown_extensions:
   - pymdownx.blocks.caption
   - toc:
       permalink: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 validation:
   links:
     absolute_links: relative_to_docs
