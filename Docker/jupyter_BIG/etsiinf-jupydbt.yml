@@ -1,0 +1,23 @@
+services:
+  etsiinf-jupydbt:
+    image: dockeibe/etsiinf-jupydbt:latest
+    container_name: etsiinf-jupydbt
+    hostname: etsiinf-jupydbt
+    ports:
+      - 8888:8888
+    networks:
+      - default
+    volumes:
+      - ./jupyter/jupyter_notebook_config.py:/home/jovyan/.jupyter/jupyter_notebook_config.py:ro
+      - /etc/localtime:/etc/localtime:ro
+      - notebooks:/home/jovyan/
+      - conda-data:/opt/conda
+
+volumes:
+  notebooks:
+  conda-data:
+  
+networks:
+  default: 
+    name: etsiinf
+    external: true

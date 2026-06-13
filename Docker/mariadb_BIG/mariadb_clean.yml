@@ -1,0 +1,30 @@
+services:
+  mariadb:
+    image: mariadb:12.2.2
+    container_name: mariadb_big
+    hostname: mariadb_big
+    # restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: alex
+      MYSQL_PASSWORD: alexpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./shared_db:/shared_db
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - default
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mariadb_data:
+
+networks:
+  default: 
+    name: etsiinf
+    external: true

@@ -1,0 +1,37 @@
+services:
+  clickhouse:
+    image: clickhouse:latest
+    container_name: clickhouse
+    restart: unless-stopped
+
+    ports:
+      - "8123:8123" # HTTP interface
+      - "9000:9000" # Native client
+      - "9004:9004" # tiene un puerto donde funciona con protocolo mariadb / mysql, para clientes mysql
+
+    volumes:
+      - ./users.xml:/etc/clickhouse-server/users.d/users.xml
+      - ./minio_collection.xml:/etc/clickhouse-server/config.d/minio_collection.xml
+      - clickhouse-data:/var/lib/clickhouse
+      - clickhouse-logs:/var/log/clickhouse-server
+
+    networks:
+      - default
+    healthcheck:
+      test: [ "CMD", "wget", "--spider", "-q", "localhost:8123/ping" ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  clickhouse-data:
+  clickhouse-logs:
+
+networks:
+  default:
+    name: etsiinf
+    external: true
+
+# docker exec -it clickhouse clickhouse-client --help
+# mariadb --protocol tcp -h clickhouse.jupyterhub
+# docker cp equipo.csv clickhouse:/var/lib/clickhouse/user-files/equipo.csv

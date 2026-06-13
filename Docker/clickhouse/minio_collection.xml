@@ -1,0 +1,21 @@
+<clickhouse>
+  <named_collections>
+    <minio_sakstar>
+      <url>https://izar.ls.fi.upm.es:30009/sakstar/</url>
+      <access_key_id>ST8FznBWCiBL1Wk5GZZX</access_key_id>
+      <secret_access_key>PMajya6c8RZYpYdUvWHigRA8uwQLUy7txElFBZma</secret_access_key>
+    </minio_sakstar>
+    <minio_root>
+      <url>https://izar.ls.fi.upm.es:30009/</url>
+      <access_key_id>ST8FznBWCiBL1Wk5GZZX</access_key_id>
+      <secret_access_key>PMajya6c8RZYpYdUvWHigRA8uwQLUy7txElFBZma</secret_access_key>
+    </minio_root>
+    <mariadb_profe>
+            <host>izar.ls.fi.upm.es</host>
+            <port>36060</port>
+            <!-- <database>eurostar</database> -->
+            <user>eurostar</user>
+            <password>eurostar</password>
+    </mariadb_profe>
+  </named_collections>
+</clickhouse>

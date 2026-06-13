@@ -1,0 +1,8 @@
+<clickhouse>
+    <s3>
+        <endpoint>https://izar.ls.fi.upm.es:30009</endpoint>
+        <access_key_id>ST8FznBWCiBL1Wk5GZZX</access_key_id>
+        <secret_access_key>PMajya6c8RZYpYdUvWHigRA8uwQLUy7txElFBZma</secret_access_key>
+        <use_virtual_addressing>false</use_virtual_addressing>
+    </s3>
+</clickhouse>

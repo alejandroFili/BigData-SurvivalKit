@@ -1,0 +1,29 @@
+services:
+  clickhouse:
+   image: clickhouse/clickhouse-server 
+  #  user: 1000:1000
+   container_name: clickhouse
+   hostname: clickhouse
+   volumes:
+     - ./data:/var/lib/clickhouse
+     - /ect/localtime:/etc/localtime:ro
+  ports:
+      - "8123:8123" # HTTP interface
+      - "9000:9000" # Native client
+      - "9004:9004" # tiene un puerto donde funciona con protocolo mariadb / mysql, para clientes mysql
+  networks:
+      - default
+  environment:
+      - CLICKHOUSE_USER = default
+      - CLICKHOUSE_PASSWORD= defaultpassword
+      - CLICKHOUSE_DEFAULT_ACCESS = 1
+      # - CLICKHOUSE_DB = 
+  # cosas de tamaño de los archives
+  ulimits: 
+    nofile:
+      soft: 262144
+      hard: 262144
+  
+  healthcheck:
+    
+  
