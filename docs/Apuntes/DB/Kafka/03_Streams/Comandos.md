@@ -76,10 +76,52 @@ value_format='AVRO');
 DESCRIBE `nombre STREAM`;
 ```
 
+```bash title="Ejemplo Output"
+ksql> describe `raw_songs`;
+
+Name                 : raw_songs
+ Field    | Type
+----------------------------
+ TITLE    | VARCHAR(STRING)
+ ALBUM    | VARCHAR(STRING)
+ DURATION | VARCHAR(STRING)
+ ARTIST   | VARCHAR(STRING)
+ TYPE     | VARCHAR(STRING)
+ RELEASE  | INTEGER
+ FILENAME | VARCHAR(STRING)
+----------------------------
+```
+
+
 !!! quote "version extendida (no olvides \`)"
 
 ```sql
 DESCRIBE `nombre STREAM` EXTENDED;
+```
+
+```bash title="Ejemplo output"
+ksql> describe `raw_songs` extended;
+
+Name                 : raw_songs
+Type                 : STREAM
+Timestamp field      : Not set - using <ROWTIME>
+Key format           : KAFKA
+Value format         : AVRO
+Kafka topic          : connect-file-pulse-csv (partitions: 1, replication: 1)
+Statement            : CREATE STREAM `raw_songs` (TITLE STRING, ALBUM STRING, DURATION STRING, ARTIST STRING, TYPE STRING, RELEASE INTEGER, FILENAME STRING) WITH (CLEANUP_POLICY='delete', KAFKA_TOPIC='connect-file-pulse-csv', KEY_FORMAT='KAFKA', VALUE_FORMAT='AVRO');
+
+ Field    | Type
+----------------------------
+ TITLE    | VARCHAR(STRING)
+ ALBUM    | VARCHAR(STRING)
+ DURATION | VARCHAR(STRING)
+ ARTIST   | VARCHAR(STRING)
+ TYPE     | VARCHAR(STRING)
+ RELEASE  | INTEGER
+ FILENAME | VARCHAR(STRING)
+----------------------------
+
+Local runtime statistics
 ```
 
 ## Ver el stream
