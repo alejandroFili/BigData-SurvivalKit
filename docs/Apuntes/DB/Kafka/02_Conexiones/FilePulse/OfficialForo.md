@@ -9,7 +9,7 @@
 "fs.listing.directory.path" = '/tmp/FilePulse/',
 ```
 
-!!! warning si no funciona intenta copiarlo del link
+!!! warning "si no funciona intenta copiarlo del link"
 
 ```SQL
 CREATE SOURCE CONNECTOR `connect-file-pulse-csv` WITH(
