@@ -1,5 +1,7 @@
 # 01_Ejemplo_Comentado
 
+[Docs - JDBC Source Config](https://docs.confluent.io/kafka-connectors/jdbc/current/source-connector/source_config_options.html#csfle-and-cspe-configurations)
+
 !!! quote "JDBC"
 
 ```SQL linenums="1"
