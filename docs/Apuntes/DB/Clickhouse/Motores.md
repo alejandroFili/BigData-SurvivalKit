@@ -1,7 +1,7 @@
 # Motores
-# MergeTree
+## MergeTree
 
-# Aggregating Merge Tree
+## Aggregating Merge Tree
 
 https://clickhouse.com/docs/engines/table-engines/mergetree-family/aggregatingmergetree
 
@@ -34,7 +34,7 @@ https://clickhouse.com/docs/engines/table-engines/mergetree-family/aggregatingme
 >GROUP BY EventDate, EventID;
 >```
 
-# Summing Merge Tree
+## Summing Merge Tree
 
 https://clickhouse.com/docs/engines/table-engines/mergetree-family/summingmergetree
 
@@ -61,7 +61,7 @@ SELECT key, sum(value) FROM summtt GROUP BY key
 OPTIMIZE TABLE nested_sum FINAL; -- emulate merge
 ```
 
-# ReplacingMergeTree
+## ReplacingMergeTree
 
 https://clickhouse.com/docs/engines/table-engines/mergetree-family/replacingmergetree
 
@@ -99,7 +99,7 @@ FROM rmt_example
 FINAL
 ```
 
-# CoalescingMergeTree
+## CoalescingMergeTree
 
 !!! danger " Replaces NULL "
 
@@ -107,7 +107,7 @@ FINAL
 
 !!! danger " Using the `FINAL` modifier forces ClickHouse to apply merge logic at query time, ensuring you get the correct, coalesced "latest" value for each column. This is the safest and most accurate method when querying from a CoalescingMergeTree table. "
 
-# CollapsingMergeTree
+## CollapsingMergeTree
 
 https://clickhouse.com/docs/engines/table-engines/mergetree-family/collapsingmergetree
 
@@ -132,25 +132,4 @@ HAVING sum(Sign) > 0
 
 !!! danger " If we do not need aggregation and want to force collapsing, we can also use the `FINAL` modifier for `FROM` clause. (LESS EFFICIENT) "
 
-
-
-# Sobre examen
-
-estaciones :
-- csv
-- json
-- csv en local
-- csv upd drive
-- csv s3 minio
-- mariadb
-- parquet
-- parquet local
-- parquet url
-- parquet s3
-
-sakila_star en mariadb dockeriado
-
-minio
-mariadb
-clickhouse
 
