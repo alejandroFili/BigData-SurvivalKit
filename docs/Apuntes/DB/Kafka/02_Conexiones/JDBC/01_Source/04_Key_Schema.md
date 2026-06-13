@@ -1,3 +1,7 @@
+# 04_KeySchema
+
+[Docs - JDBC Source Config](https://docs.confluent.io/kafka-connectors/jdbc/current/source-connector/source_config_options.html#csfle-and-cspe-configurations)
+
 ```SQL linenums="1" hl_lines="21 25"
 CREATE SOURCE CONNECTOR `sak_customer_sch` WITH(
     "connector.class" = 'io.confluent.connect.jdbc.JdbcSourceConnector',

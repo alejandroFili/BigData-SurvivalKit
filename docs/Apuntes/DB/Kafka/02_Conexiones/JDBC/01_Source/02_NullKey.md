@@ -1,3 +1,5 @@
+# 02_NullKey
+
 ```SQL linenums="1"
 CREATE SOURCE CONNECTOR `raw_customer` WITH(
     "connector.class" = 'io.confluent.connect.jdbc.JdbcSourceConnector',
