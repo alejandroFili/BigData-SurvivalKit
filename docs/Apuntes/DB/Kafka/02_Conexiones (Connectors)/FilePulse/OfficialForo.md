@@ -26,13 +26,20 @@ CREATE SOURCE CONNECTOR `connect-file-pulse-csv` WITH(
     "file.filter.regex.pattern" = '.*\\.csv$',
     "offset.policy.class" = 'io.streamthoughts.kafka.connect.filepulse.offset.DefaultSourceOffsetPolicy',
     "offset.attributes.string" = 'name',
+    --- no crea mensaje con cabecera (si los tiene)
     "skip.headers" = '1',
     --- CUIDADO : aqui se pone el topic completo (no combina prefix etc)
+    --- nombre del topic del mensajes cuando se cargan
+    --- normalmente no se dejan crear conectores por defecto
+    --- normalmente te asignan debajo de otros seibe.filepulse.connect ...
     "topic" = 'connect-file-pulse-csv',
     "tasks.reader.class" = 'io.streamthoughts.kafka.connect.filepulse.fs.reader.LocalRowFileInputReader',
     "tasks.file.status.storage.class" = 'io.streamthoughts.kafka.connect.filepulse.state.KafkaFileObjectStateBackingStore',
     "tasks.file.status.storage.bootstrap.servers" = 'redpanda:9092',
+    --- mensajes de control de tareas
+    --- otro topic 
     "tasks.file.status.storage.topic" = 'connect-file-pulse-status',
+    -- se puede usar sin est
     "filters" = 'ParseCSVLine,FileName,ReleaseToInt',
     "filters.ParseCSVLine.extract.column.name" = 'headers',
     "filters.ParseCSVLine.trim.column" = 'true',
