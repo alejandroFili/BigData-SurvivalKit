@@ -70,16 +70,16 @@ value_format='AVRO');
 
 ## Comprobaciones
 
-!!! quote "version corta"
+!!! quote "version corta (no olvides \`)"
 
 ```sql
-DESCRIBE `nombre topic`;
+DESCRIBE `nombre STREAM`;
 ```
 
-!!! quote "version extendida"
+!!! quote "version extendida (no olvides \`)"
 
 ```sql
-DESCRIBE `nombre topic` EXTENDED;
+DESCRIBE `nombre STREAM` EXTENDED;
 ```
 
 ## Ver el stream
