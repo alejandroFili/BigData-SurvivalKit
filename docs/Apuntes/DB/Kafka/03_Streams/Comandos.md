@@ -86,7 +86,7 @@ DESCRIBE `nombre topic` EXTENDED;
 
 >[!Danger] es importante que sea las comillas del codigo siguente las \` no las \'
 
-!!! danger es importante que sea las comillas del codigo siguente las \` no las \' para el nombre del stream
+!!! danger "es importante que sea las comillas del codigo siguente las \` no las \' para el nombre del stream"
 
 ```SQL
 SET 'auto.offset.reset'='earliest';  
