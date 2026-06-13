@@ -35,7 +35,7 @@ print `raw.customer` from beginning limit 5;
 
 !!! quote "Ejemplo salida print"
 
-```bash linenums="1" hl_lines="2-5"
+```bash linenums="1" hl_lines="2-6"
 ksql> print 'raw.customer' from beginning limit 5;
 # key format : Null, no hay nada
 Key format: ¯\_(ツ)_/¯ - no data processed

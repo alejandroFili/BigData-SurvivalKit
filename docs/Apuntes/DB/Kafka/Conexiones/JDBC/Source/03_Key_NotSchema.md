@@ -1,4 +1,4 @@
-```SQL linenums="1" hl_lines="20-20"
+```SQL linenums="1" hl_lines="21-21"
 CREATE SOURCE CONNECTOR `sak_customer` WITH(
     "connector.class" = 'io.confluent.connect.jdbc.JdbcSourceConnector',
     --- CUIDADO puerto
@@ -42,7 +42,7 @@ print `sak.customer` from beginning limit 5;
 
 !!! quote "Ejemplo salida print"
 
-```bash linenums="1" hl_lines="2-5"
+```bash linenums="1" hl_lines="2-6"
 ksql> print `sak.customer` from beginning limit 5;
 # Key tiene formato pero NO se ha usado schema
 # sale json or string aunque se puso INT

@@ -46,7 +46,7 @@ print `sch.customer` from beginning limit 5;
 
 !!! quote "Ejemplo salida print"
 
-```bash linenums="1" hl_lines="2-5"
+```bash linenums="1" hl_lines="2-6"
 ksql> print `sch.customer` from beginning limit 5;
 # Uso de schema de kafka -> tipo de kafka (correcto INT)
 Key format: KAFKA_INT
