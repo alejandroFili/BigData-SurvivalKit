@@ -9,3 +9,7 @@
 [Docs - JDBC Source Config](https://docs.confluent.io/kafka-connectors/jdbc/current/source-connector/source_config_options.html#csfle-and-cspe-configurations)
 
 [Docs - JDBC Sink Config](https://docs.confluent.io/kafka-connectors/jdbc/current/sink-connector/sink_config_options.html)
+
+[Docs - S3 Source Config](https://docs.confluent.io/kafka-connectors/s3-source/current/configuration_options.html)
+
+[Docs - S3 Sink Config](https://docs.confluent.io/kafka-connectors/s3-sink/current/configuration_options.html)

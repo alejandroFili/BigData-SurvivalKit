@@ -1,24 +1,7 @@
-- [ ] MariaDB
-- [ ] MySQL
-- [ ] Ficheros locales
-	- [ ] Parquet
-	- [ ] Parquet - Hive
-	- [ ] CSV
-	- [ ] JSON
-	- [ ] Arrow ?
-- [ ] S3 - Minio
-	- [ ] Conexion Directa
-	- [ ] Conexion Named Collections
-	- [ ] Tipo Ficheros
-		- [ ] Parquet
-		- [ ] Parquet - Hive
-		- [ ] CSV
-		- [ ] JSON
-		- [ ] Arrow
+# Conexiones
 
 
-
-# MariaDB
+## MariaDB
 
 ```SQL
 SELECT *
@@ -42,11 +25,11 @@ FROM mysql(
 );
 ```
 
-# Parquet
+## Parquet
 
-## Local
+### Local
 
-### Copiar los ficheros a docker
+#### Copiar los ficheros a docker
 
 !!! warning " Abre una terminal en la carpeta del fichero. Ahorras escribir la ruta "
 
@@ -58,7 +41,7 @@ docker cp eurotrain.parquet clickhouse:/var/lib/clickhouse/user_files
 docker cp file dockerName:location
 ```
 
-### Permisos del fichero copiado
+#### Permisos del fichero copiado
 
 !!! danger " Ojo con los permisos "
 
@@ -72,7 +55,7 @@ chmod 777 eurotrain.parquet
 # damos todos los permisos a todos, obviamente no seguro, pero total es en nuestro docker
 ```
 
-### Consulta
+#### Consulta
 
 ```SQL
 SELECT *
@@ -80,14 +63,14 @@ FROM file('eurotrain.parquet', Parquet)
 LIMIT 10;
 ```
 
-## Online
+### Online
 
 
-# Parquet Hive
+## Parquet Hive
 
-## Local
+### Local
 
-### Copiar los ficheros a docker
+#### Copiar los ficheros a docker
 
 !!! warning " Abre una terminal en la carpeta del fichero. Ahorras escribir la ruta "
 
@@ -104,9 +87,11 @@ nos conectamos al bash de docker:
 ```BASH
 docker exec -it clickhouse /bin/bash
 ```
-### Unzip
+
+#### Unzip
 
 Entramos en la carpeta donde tenemos el zip
+
 ```BASH
 cd /var/lib/clickhouse/user_files
 ```
@@ -117,14 +102,16 @@ unzip EuroTrain.zip
 
 !!! danger " Da error unzip ? "
 >verifica si lo tienes instalado:
->```Bash
->which unzip
->```
+
+```Bash
+which unzip
+```
+
 >si no aparece nada
->
->```Bash
->sudo apt-get install unzip
->```
+
+```Bash
+sudo apt-get install unzip
+```
 
 Ahora si entras en la carpeta EuroTrains deberias ver las carpetas de hive
 
@@ -133,11 +120,12 @@ cd EuroTrains
 ls
 ```
 
-### Query
+#### Query
 
 Parece funcionar en DBeaver tambien, pero si quieres en terminal:
 
 Nos conectamos al cliente de clickhouse
+
 ```BASH
 docker exec -it clickhouse clickhouse-client
 ```
@@ -166,9 +154,9 @@ SETTINGS use_hive_partitioning = 1;
 >chmod -R 777 /var/lib/clickhouse/user_files
 >```
 >Damos todos los permisos a todas las carpetas y ficheros dentro de esa carpeta
-# CSV
+## CSV
 
-# Jupyter
+## Jupyter
 
 ```PYTHON
 import clickhouse_connect
@@ -185,12 +173,15 @@ client = clickhouse_connect.get_client(
 ```
 
 !!! danger " Si tienes Syntax error (Multi-statements are not allowed) "
-las `'''` tienen se que ser pegadas
-mal :
-![](/Assets/img/Pasted%20image%2020260501202558.png)
-bien:
-![](/Assets/img/Pasted%20image%2020260501202717.png)
+las `'''` tienen se que ser pegadas:
 
+mal :
+
+![mal](/Assets/img/Pasted%20image%2020260501202558.png)
+
+bien:
+
+![bien](/Assets/img/Pasted%20image%2020260501202717.png)
 
 ```PYTHON
 query = '''SELECT
@@ -208,7 +199,7 @@ for row in result.result_rows:
     print(row)
 ```
 
-# Terminal
+## Terminal
 
 Encendemos el docker:
 
@@ -244,27 +235,28 @@ clickhouse-client -u<NombreUsuario> -p<ContraseñaUsuario>
 docker exec -it clickhouse clickhouse-client
 ```
 
-# DBeaver
+## DBeaver
 
-## Local
+### Local
 
 ![LocalConection](/Assets/img/Pasted%20image%2020260504132410.png)
 
 !!! warning " Puerto, usuario, password del docker compose "
 
-## Online
+### Online
 
 ![OnlineConection](/Assets/img/Pasted%20image%2020260504132518.png)
 
 !!! warning " Link etc del profe "
 
-# S3 Minio
+## S3 Minio
 
-## Conexion directa
+### Conexion directa
 
 !!! quote " Muestra los credenciales, no utiliza el config "
 
 !!! quote " Describe para ver como se van a inferir los datos "
+
 ```SQL
 DESCRIBE TABLE
 s3(
@@ -299,7 +291,7 @@ limit 10
 ;
 ```
 
-## Conexion con Named Collections
+### Conexion con Named Collections
 
 Necesitas un fichero (el nombre en si da igual) .xml en 
 
@@ -375,4 +367,3 @@ LIMIT 10
 ```
 
 !!! warning " La primera utiliza la conexión directa a la carpeta sakstar la segunda no asi que tienes que ponerlo en el filename "
-
