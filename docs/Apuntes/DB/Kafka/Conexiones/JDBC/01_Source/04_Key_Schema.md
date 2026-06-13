@@ -1,4 +1,4 @@
-```SQL linenums="1" hl_lines="21-21"
+```SQL linenums="1" hl_lines="21, 25"
 CREATE SOURCE CONNECTOR `sak_customer_sch` WITH(
     "connector.class" = 'io.confluent.connect.jdbc.JdbcSourceConnector',
     --- CUIDADO puerto
@@ -19,14 +19,15 @@ CREATE SOURCE CONNECTOR `sak_customer_sch` WITH(
     --- sch.customer (prefix + table.whitelist) ¿?
     --- sienta las bases de llevar del operacional en tiempo continuo
     "topic.prefix" = 'sch.',
-    --- CUIDAD uso de schema para el key
+    --- CUIDADO uso de schema para el value
+    "value.converter" = 'io.confluent.connect.avro.AvroConverter',
+    "value.converter.schema.registry.url" = 'http://redpanda:8081',
+    "value.converter.schemas.enable" = 'true',
+    --- CUIDADO uso de schema para el key
     --- Key format: KAFKA_INT
     "key.converter" = 'org.apache.kafka.connect.converters.IntegerConverter',
     "key.converter.schema.registry.url" = 'http://redpanda:8081',
     "key.converter.schemas.enable" = 'true',
-    "value.converter" = 'io.confluent.connect.avro.AvroConverter',
-    "value.converter.schema.registry.url" = 'http://redpanda:8081',
-    "value.converter.schemas.enable" = 'true',
     --- CUIDADO transformaciones del KEY
     "transforms" = 'createKey,extractInt',
     "transforms.createKey.type" = 'org.apache.kafka.connect.transforms.ValueToKey',
