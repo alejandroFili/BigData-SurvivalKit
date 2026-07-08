@@ -1,0 +1,47 @@
+.duck {
+  color: #FFD700;
+  transform: scaleX(-1);
+  display: inline-block;
+  font-size: 40px; /* or icon size */
+  cursor: pointer;
+  text-decoration: none;
+  animation: duckMove 4s infinite linear;
+  /* animation: wobble 0.6s infinite ease-in-out; */
+}
+
+a.duck,
+a.duck:link,
+a.duck:visited,
+a.duck:hover,
+a.duck:active {
+  color: #FFEA70 !important;
+  text-decoration: none;
+}
+
+.duck:active {
+  transform: scale(0.9) rotate(-5deg);
+}
+
+@keyframes duckMove {
+  0% {
+    transform: translateX(0) scaleX(-1);
+  }
+
+  49% {
+    transform: translateX(300px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(300px) scaleX(1);
+  }
+
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+/* @keyframes wobble {
+  0%   { transform: scaleX(-1) rotate(-6deg) translateY(0px); }
+  50%  { transform: scaleX(-1) rotate(6deg) translateY(300px); }
+  100% { transform: scaleX(-1) rotate(-6deg) translateY(0px); }
+} */
